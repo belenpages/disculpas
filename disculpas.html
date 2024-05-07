@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+    </style>
+    <title>Pérdoname</title>
+</head>
+<body>
+    <div class="container">
+        <h1>¿Quieres terminar conmigo?</h1>
+        <button id="siBtn" onclick="handleYesClick()">Sí</button>
+        <button id="noBtn" onclick="showSecondPage()">No</button>
+    </div> 
+    <script>
+        var button = document.getElementById('siBtn');
+        var container = document.querySelector('.container');
+
+        button.addEventListener('mouseover', function() {
+            button.disabled = true;
+            escapeButton();
+        });
+
+        function escapeButton() {
+            var containerRect = container.getBoundingClientRect();
+            var maxX = containerRect.width - button.offsetWidth;
+            var maxY = containerRect.height - button.offsetHeight;
+            
+            var newX = Math.floor(Math.random() * maxX);
+            var newY = Math.floor(Math.random() * maxY);
+            
+            button.style.transform = 'translate(' + newX + 'px, ' + newY + 'px)';
+
+            setTimeout(function() {
+                button.disabled = false;
+                button.style.transform = 'translate(0, 0)';
+            }, 1000); 
+        }
+
+        function handleYesClick() {
+         
+            button.style.display = 'none';
+        }
+
+        function showSecondPage() {
+            window.location.href = "no.html";
+        }
+    </script>
+</body>
+</html>

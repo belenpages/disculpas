@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .message {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .hearts {
+            margin-bottom: 20px;
+        }
+
+        .heart-img {
+            width: 50px;
+            height: auto;
+            margin: 0 5px;
+            animation: beat 1s infinite;
+        }
+
+        @keyframes beat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .gif {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+        }
+    </style>
+    <title>Te amo </title>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Yo también te amo, amor mío!</h1>
+        <p class="message">Arreglemos las cosas</p>
+        <div class="hearts">
+            <img class="heart-img" src="heart.jpg" alt="Corazón">
+            <img class="heart-img" src="heart.jpg" alt="Corazón">
+            <img class="heart-img" src="heart.jpg" alt="Corazón">
+        </div>
+        <img class="gif" src="pareja.png" alt="GIF de tres fotos">
+    </div>
+</body>
+</html>
